@@ -1,6 +1,6 @@
 import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.11.2/dist/maplibre-gl.mjs';
 
-const DEFAULT_STYLE_URL='https://demotiles.maplibre.org/style.json';
+const DEFAULT_STYLE_URL='https://tiles.openfreemap.org/styles/liberty';
 let map;
 let currentStyle=null;
 
@@ -105,7 +105,7 @@ function applyStyle(){
 async function loadDefaultStyle(){
  try{
   localStorage.removeItem('maplibre.style');
-  status('公式デモ地図を読み込み中…');
+  status('OpenFreeMapの詳細地図を読み込み中…');
   map.setStyle(DEFAULT_STYLE_URL);
  }catch(e){status('地図読み込みエラー: '+e.message)}
 }
@@ -167,7 +167,7 @@ map.on('load',()=>{
  els.json.value=JSON.stringify(currentStyle,null,2);
  renderLayers();
  syncCamera();
- status('MapLibre GL JS '+maplibregl.getVersion()+'\n公式デモ地図を表示中（APIキー不要）');
+ status('MapLibre GL JS '+maplibregl.getVersion()+'\nOpenFreeMap / OSM 詳細地図を表示中（APIキー不要）');
 });
 
 map.on('styledata',()=>{
