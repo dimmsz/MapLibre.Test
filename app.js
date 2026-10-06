@@ -135,7 +135,7 @@ $('#add-layer').onclick=()=>{
  applyStyle();
 };
 
-$('#fly-home').onclick=()=>map.flyTo({center:[136.9066,35.1815],zoom:11});
+$('#fly-home').onclick=()=>map.flyTo({center:[136.899508,35.159758],zoom:16});
 $('#save-button').onclick=()=>{
  localStorage.setItem('maplibre.style',JSON.stringify(currentStyle));
  status('localStorageへ設定を保存しました');
@@ -148,8 +148,8 @@ $('#save-button').onclick=()=>{
 map=new maplibregl.Map({
  container:'map',
  style:DEFAULT_STYLE_URL,
- center:[136.9066,35.1815],
- zoom:11,
+ center:[136.899508,35.159758],
+ zoom:16,
  localIdeographFontFamily:'sans-serif'
 });
 
